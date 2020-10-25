@@ -7,7 +7,6 @@ export default function App() {
   return (
     <SafeAreaView style={styles.container}>
       <Text>Hello tester! This is a test</Text>
-      <Image source={require('./assets/icon.png')}/>
       <StatusBar style="auto" />
     </SafeAreaView>
   );
