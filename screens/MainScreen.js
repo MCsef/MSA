@@ -39,5 +39,3 @@ const styles = StyleSheet.create({
     flex: 1,justifyContent: 'flex-end'
   }
 });
-
-export default MainScreen;
