@@ -1,7 +1,6 @@
 import React from 'react';
-import MainScreen from "./screens/MainScreen";
-import ContactScreen from "./screens/ContactScreen";
+import Navigator from './routes/mainScreenStack';
 
 export default function App() {
-  return <MainScreen />; 
+  return <Navigator/>; 
 }
