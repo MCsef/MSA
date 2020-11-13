@@ -3,12 +3,8 @@ import { StyleSheet, Text, View, Image, ImageBackground, Button, TextInput} from
 
 export default function MainScreen({navigation}) {
 
-  const pressLoginHandler=()=>{
-    navigation.navigate('UserProfileScreen')
-  }
-
   const pressSignUpHandler=()=>{
-    navigation.navigate('SignUpScreen')
+    navigation.navigate('LoginScreen')
   }
 
   return (
@@ -17,13 +13,17 @@ export default function MainScreen({navigation}) {
         <View style={styles.logoStyle}>
           <Image source={require('../assets/logo.png')}/>
           <View style={styles.viewButtonStyle}> 
+            <Text style={styles.textStyle}>First Name</Text>
+            <TextInput placeholder="First Name" placeholderTextColor="#6666" color="white" style={styles.TextInput}/>
+            <Text style={styles.textStyle}>Last Name</Text>
+            <TextInput placeholder="Last Name" placeholderTextColor="#6666" color="white" style={styles.TextInput}/>
             <Text style={styles.textStyle}>Email</Text>
             <TextInput placeholder="Your Email" placeholderTextColor="#6666" color="white" style={styles.TextInput}/>
             <Text style={styles.textStyle}>Password</Text>
             <TextInput placeholder="Your Password" secureTextEntry={true} placeholderTextColor="#6666" color="white" style={styles.TextInput}/>
-            <Button title="Login" onPress={pressLoginHandler}/> 
-            <Text style={styles.textStyle}>Dont have an account?</Text>
-            <Button title="SignUp" onPress={pressSignUpHandler}/> 
+            <Text style={styles.textStyle}>Confirm Password</Text>
+            <TextInput placeholder="Retype Password" secureTextEntry={true} placeholderTextColor="#6666" color="white" style={styles.TextInput}/>
+            <Button title="Sign up" onPress={pressSignUpHandler}/> 
           </View> 
         </View>  
     </View> 

@@ -4,7 +4,7 @@ import { StyleSheet, Text, View, Image, ImageBackground, Button} from 'react-nat
 export default function MainScreen({navigation}) {
 
   const pressContactHandler=()=>{
-    navigation.navigate('ContactScreen')
+    navigation.navigate('LoginScreen')
   }
 
   return (

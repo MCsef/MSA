@@ -5,12 +5,14 @@ import MainScreen from "../screens/MainScreen";
 import ContactScreen from "../screens/ContactScreen";
 import LoginScreen from "../screens/LoginScreen";
 import UserProfileScreen from "../screens/UserProfileScreen";
+import SignUpScreen from "../screens/SignUpScreen";
 
 const screens = {
   MainScreen: { screen: MainScreen },
   ContactScreen: { screen: ContactScreen },
   LoginScreen: { screen: LoginScreen },
-  UserProfileScreen: { screen: UserProfileScreen }
+  UserProfileScreen: { screen: UserProfileScreen },
+  SignUpScreen: { screen: SignUpScreen }
 }
 
 const MainScreenStack=createStackNavigator(screens);
