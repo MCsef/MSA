@@ -4,6 +4,10 @@ import { StyleSheet, Text, View, Image, ImageBackground, Button} from 'react-nat
 export default function MainScreen({navigation}) {
 
   const pressContactHandler=()=>{
+    navigation.navigate('ContactScreen')
+  }
+
+  const pressLoginHandler=()=>{
     navigation.navigate('LoginScreen')
   }
 
@@ -13,7 +17,9 @@ export default function MainScreen({navigation}) {
         <View style={styles.logoStyle}>
           <Image source={require('../assets/logo.png')}/>
           <View style={styles.viewButtonStyle}> 
-            <Button title="Button" onPress={pressContactHandler}/> 
+            <Button title="Contact Us" onPress={pressContactHandler}/> 
+            <Text style={styles.textStyle}></Text>
+            <Button title="Go to your account" onPress={pressLoginHandler}/>
           </View> 
         </View>  
     </View> 
@@ -42,7 +48,7 @@ const styles = StyleSheet.create({
   viewButtonStyle:
   {
     flex: 1,
-    top: "500%",
+    top: "50%",
     alignItems: 'center'
   },
 });
