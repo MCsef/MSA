@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Image, ImageBackground, Button} from 'react-nat
 
 export default function MainScreen({navigation}) {
 
-  const pressContactHandler=()=>{
+  const pressLoginHandler=()=>{
     navigation.navigate('ContactScreen')
   }
 
@@ -13,7 +13,7 @@ export default function MainScreen({navigation}) {
         <View style={styles.logoStyle}>
           <Image source={require('../assets/logo.png')}/>
           <View style={styles.viewButtonStyle}> 
-            <Button title="Button" onPress={pressContactHandler}/> 
+            <Button title="Login" onPress={pressLoginHandler}/> 
           </View> 
         </View>  
     </View> 
