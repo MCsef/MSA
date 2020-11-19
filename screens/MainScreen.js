@@ -3,6 +3,10 @@ import { StyleSheet, Text, View, Image, ImageBackground, Button} from 'react-nat
 
 export default function MainScreen({navigation}) {
 
+  const pressRoomsHandler=()=>{
+    navigation.navigate('RoomsScreen')
+  }
+
   const pressContactHandler=()=>{
     navigation.navigate('ContactScreen')
   }
@@ -17,6 +21,8 @@ export default function MainScreen({navigation}) {
         <View style={styles.logoStyle}>
           <Image source={require('../assets/logo.png')}/>
           <View style={styles.viewButtonStyle}> 
+            <Button title="See rooms" onPress={pressRoomsHandler}/>
+            <Text style={styles.textStyle}></Text>
             <Button title="Contact Us" onPress={pressContactHandler}/> 
             <Text style={styles.textStyle}></Text>
             <Button title="Go to your account" onPress={pressLoginHandler}/>
