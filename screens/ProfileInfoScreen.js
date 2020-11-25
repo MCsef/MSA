@@ -1,8 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, ImageBackground, Dimensions} from 'react-native';
 
-export default function ContactScreen({navigation}) {
-  
+function ContactScreen({navigation}) {
   return (
     <View style={[styles.container]}>
       <ImageBackground source={require('../assets/main2.jpg')} style={styles.imageStyle}/>
@@ -11,14 +10,7 @@ export default function ContactScreen({navigation}) {
         </View>
         <View style={styles.viewtextStyle}>
           <View style={styles.viewBackgroundStyle}>
-            <Text style={styles.textStyle}>E-mail: office@thecodex.ro</Text>
-            <Text style={styles.textStyle}>Parties: party@thecodex.ro</Text>
-            <Text style={styles.textStyle}>Tel:(+40) 770.863.122 /+(40) 0744.355.921</Text>
-            <Text style={styles.textStyle}>Address: Traian 109 st., Sector 2, Bucharest</Text>
-            <Text style={styles.textStyle}>Working hours:</Text>
-            <Text style={styles.textStyle}>Tuesday to Sunday from 10:30 to 23:00.</Text>
-            <Text style={styles.textStyle}>(Only on confirmed booking basis).</Text>
-            <Text style={styles.textStyle}>We’re closed on Mondays.</Text>
+            <Text style={styles.textStyle}>Some info about user</Text>
           </View>
         </View>
     </View>  
@@ -64,3 +56,5 @@ const styles = StyleSheet.create({
     height: Dimensions.get('window').height-300
   }
 });
+
+export default ContactScreen;

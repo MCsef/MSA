@@ -7,6 +7,7 @@ import LoginScreen from "../screens/LoginScreen";
 import UserProfileScreen from "../screens/UserProfileScreen";
 import SignUpScreen from "../screens/SignUpScreen";
 import RoomsScreen from "../screens/RoomsScreen";
+import ProfileInoScreen from "../screens/ProfileInfoScreen";
 
 const screens = {
   MainScreen: { screen: MainScreen },
@@ -14,7 +15,8 @@ const screens = {
   LoginScreen: { screen: LoginScreen },
   UserProfileScreen: { screen: UserProfileScreen },
   SignUpScreen: { screen: SignUpScreen },
-  RoomsScreen: { screen: RoomsScreen }
+  RoomsScreen: { screen: RoomsScreen },
+  ProfileInfoScreen: { screen: ProfileInoScreen }
 }
 
 const MainScreenStack=createStackNavigator(screens);
