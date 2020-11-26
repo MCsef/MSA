@@ -1,14 +1,11 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, ImageBackground, Button} from 'react-native';
+import { StyleSheet, Text, View, Image, ImageBackground, Dimensions} from 'react-native';
+import ButtonWithBackgrund from './ButtonWithBackground';
 
-export default function MainScreen({navigation}) {
+export default function RoomsScreen({navigation}) {
 
-  const pressContactHandler=()=>{
+  const pressContactScreenHandler=()=>{
     navigation.navigate('ContactScreen')
-  }
-
-  const pressLoginHandler=()=>{
-    navigation.navigate('LoginScreen')
   }
 
   return (
@@ -17,7 +14,9 @@ export default function MainScreen({navigation}) {
         <View style={styles.logoStyle}>
           <Image source={require('../assets/logo.png')}/>
           <View style={styles.viewButtonStyle}> 
-            <Button title="Contact Us" onPress={pressContactHandler}/> 
+            <View style={styles.viewBackgroundStyle}>
+              <ButtonWithBackgrund text="CONTACT US" color="#30261d" onPress={pressContactScreenHandler}/>
+            </View>
           </View> 
         </View>  
     </View> 
@@ -49,4 +48,15 @@ const styles = StyleSheet.create({
     top: "50%",
     alignItems: 'center'
   },
+  viewBackgroundStyle:
+  {
+    backgroundColor: "black", 
+    justifyContent: "center", 
+    alignItems: "center", 
+    borderRadius: 24,
+    width: Dimensions.get('window').width-50, 
+    height: Dimensions.get('window').height-300,
+    position: "absolute",
+    alignContent: "center"
+  }
 });

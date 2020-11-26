@@ -1,8 +1,9 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, ImageBackground, Button, TextInput} from 'react-native';
+import { StyleSheet, Text, View, Image, ImageBackground, Dimensions, TextInput} from 'react-native';
+import ButtonWithBackground from './ButtonWithBackground';
 
-export default function MainScreen({navigation}) {
-
+export default function LoginScreen({navigation}) {
+  
   const pressLoginHandler=()=>{
     navigation.navigate('UserProfileScreen')
   }
@@ -16,44 +17,43 @@ export default function MainScreen({navigation}) {
       <ImageBackground source={require('../assets/main2.jpg')} style={styles.imageStyle}/>
         <View style={styles.logoStyle}>
           <Image source={require('../assets/logo.png')}/>
-          <View style={styles.viewButtonStyle}> 
-            <Text style={styles.textStyle}>Email</Text>
-            <TextInput placeholder="Your Email" placeholderTextColor="#6666" color="white" style={styles.TextInput}/>
-            <Text style={styles.textStyle}>Password</Text>
-            <TextInput placeholder="Your Password" secureTextEntry={true} placeholderTextColor="#6666" color="white" style={styles.TextInput}/>
-            <Button title="Login" onPress={pressLoginHandler}/> 
-            <Text style={styles.textStyle}>Dont have an account?</Text>
-            <Button title="SignUp" onPress={pressSignUpHandler}/> 
-          </View> 
-        </View>  
-    </View> 
+        </View>
+        <View style={styles.viewtextStyle}>
+          <View style={styles.viewBackgroundStyle}>
+          <Text style={styles.textStyle}>Email</Text>
+              <TextInput placeholder="Your Email" placeholderTextColor="#6666" color="white" style={styles.TextInput}/>
+              <Text style={styles.textStyle}>Password</Text>
+              <TextInput placeholder="Your Password" secureTextEntry={true} placeholderTextColor="#6666" color="white" style={styles.TextInput}/>
+              <ButtonWithBackground text="LOGIN" color="#30261d" onPress={pressLoginHandler}/> 
+              <Text style={styles.textStyle}>{"\n"}{"\n"}Dont have an account?</Text>
+              <ButtonWithBackground text="SIGN UP" color="#30261d" onPress={pressSignUpHandler}/> 
+          </View>
+        </View>
+    </View>  
   );
 } 
 
 const styles = StyleSheet.create({
-  container: 
-  {
+  container: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center"
   },
-  imageStyle: 
-  {
+  imageStyle: {
     flex: 1,
     width: "100%",
     height: "100%"
   },
-  logoStyle:
-  {
+  logoStyle: {
     position: "absolute",
     justifyContent: "center",
     top: "8%"
   },
-  viewButtonStyle:
+  viewtextStyle:
   {
-    flex: 1,
-    top: "50%",
-    alignItems: 'center'
+      backgroundColor: "transparent",
+      position: "absolute",
+      alignContent: "center"
   },
   textStyle:
   {
@@ -62,4 +62,13 @@ const styles = StyleSheet.create({
       paddingLeft: 25,
       paddingRight: 25
   },
+  viewBackgroundStyle:
+  {
+    backgroundColor: "black", 
+    justifyContent: "center", 
+    alignItems: "center", 
+    borderRadius: 24,
+    width: Dimensions.get('window').width-50, 
+    height: Dimensions.get('window').height-300
+  }
 });

@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, ImageBackground, Button} from 'react-native';
+import ButtonWithBackground from './ButtonWithBackground';
 
 export default function MainScreen({navigation}) {
 
@@ -21,11 +22,11 @@ export default function MainScreen({navigation}) {
         <View style={styles.logoStyle}>
           <Image source={require('../assets/logo.png')}/>
           <View style={styles.viewButtonStyle}> 
-            <Button title="See rooms" onPress={pressRoomsHandler}/>
-            <Text style={styles.textStyle}></Text>
-            <Button title="Contact Us" onPress={pressContactHandler}/> 
-            <Text style={styles.textStyle}></Text>
-            <Button title="Go to your account" onPress={pressLoginHandler}/>
+            <ButtonWithBackground text="SEE ROOMS" color="#30261d" onPress={pressRoomsHandler}/>
+            <Text></Text>
+            <ButtonWithBackground text="CONTACT US" color="#30261d" onPress={pressContactHandler}/> 
+            <Text></Text>
+            <ButtonWithBackground text="GO TO YOUR ACCOUNT" color="#30261d" onPress={pressLoginHandler}/>
           </View> 
         </View>  
     </View> 
@@ -56,5 +57,5 @@ const styles = StyleSheet.create({
     flex: 1,
     top: "50%",
     alignItems: 'center'
-  },
+  }
 });
