@@ -19,6 +19,11 @@ export default function MainScreen({navigation}) {
   const pressBookingsHandler=()=>{
     navigation.navigate('BookingsScreen')
   }
+
+  const pressPartiesHandler=()=>{
+    navigation.navigate('PartiesScreen')
+  }
+
   const pressCorporateHandler=()=>{
     navigation.navigate('CorporateScreen')
   }
@@ -37,19 +42,23 @@ export default function MainScreen({navigation}) {
         <View style={styles.logoStyle}>
           <Image source={require('../assets/logo.png')}/>
           <View style={styles.viewButtonStyle}> 
-            <ButtonWithBackground text="ABOUT" color="#30261d" onPress={pressAboutHandler}/>
-            <Text></Text>
-            <ButtonWithBackground text="GAMES" color="#30261d" onPress={pressRoomsHandler}/>
-            <Text></Text>
-            <ButtonWithBackground text="PRICES" color="#30261d" onPress={pressPricesHandler}/>
-            <Text></Text>
-            <ButtonWithBackground text="BOOKINGS" color="#30261d" onPress={pressBookingsHandler}/>
-            <Text></Text>
-            <ButtonWithBackground text="CORPORATE" color="#30261d" onPress={pressCorporateHandler}/>
-            <Text></Text>
-            <ButtonWithBackground text="CONTACT" color="#30261d" onPress={pressContactHandler}/> 
-            <Text></Text>
-            <ButtonWithBackground text="GO TO YOUR ACCOUNT" color="#30261d" onPress={pressLoginHandler}/>
+            <ScrollView style={styles.viewBackgroundStyle}>
+              <ButtonWithBackground text="ABOUT" color="#30261d" onPress={pressAboutHandler}/>
+              <Text></Text>
+              <ButtonWithBackground text="GAMES" color="#30261d" onPress={pressRoomsHandler}/>
+              <Text></Text>
+              <ButtonWithBackground text="PRICES" color="#30261d" onPress={pressPricesHandler}/>
+              <Text></Text>
+              <ButtonWithBackground text="BOOKINGS" color="#30261d" onPress={pressBookingsHandler}/>
+              <Text></Text>
+              <ButtonWithBackground text="PARTIES" color="#30261d" onPress={pressPartiesHandler}/>
+              <Text></Text>
+              <ButtonWithBackground text="CORPORATE" color="#30261d" onPress={pressCorporateHandler}/>
+              <Text></Text>
+              <ButtonWithBackground text="CONTACT" color="#30261d" onPress={pressContactHandler}/> 
+              <Text></Text>
+              <ButtonWithBackground text="GO TO YOUR ACCOUNT" color="#30261d" onPress={pressLoginHandler}/>
+            </ScrollView>
           </View> 
         </View>  
     </View> 
@@ -80,5 +89,10 @@ const styles = StyleSheet.create({
     flex: 1,
     top: "5%",
     alignItems: 'center'
+  },
+  viewBackgroundStyle:
+  {
+    position: "absolute",
+    alignContent: "center"
   }
 });

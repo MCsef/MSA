@@ -45,24 +45,26 @@ export default function UserProfileScreen({navigation}) {
       <ImageBackground source={require('../assets/main2.jpg')} style={styles.imageStyle}/>
         <View style={styles.logoStyle}>
           <Image source={require('../assets/logo.png')}/>
-          <View style={styles.viewButtonStyle}> 
-            <ButtonWithBackground text="ABOUT" color="#30261d" onPress={pressAboutHandler}/>
-            <Text></Text>
-            <ButtonWithBackground text="GAMES" color="#30261d" onPress={pressRoomsHandler}/>
-            <Text></Text>
-            <ButtonWithBackground text="PRICES" color="#30261d" onPress={pressPricesHandler}/>
-            <Text></Text>
-            <ButtonWithBackground text="BOOKINGS" color="#30261d" onPress={pressBookingsHandler}/>
-            <Text></Text>
-            <ButtonWithBackground text="EVENTS" color="#30261d" onPress={pressEventsHandler}/>
-            <Text></Text>
-            <ButtonWithBackground text="PARTIES" color="#30261d" onPress={pressPartiesHandler}/>
-            <Text></Text>
-            <ButtonWithBackground text="CORPORATE" color="#30261d" onPress={pressCorporateHandler}/>
-            <Text></Text>
-            <ButtonWithBackground text="CONTACT" color="#30261d" onPress={pressContactHandler}/> 
-            <Text></Text>
-            <ButtonWithBackground text="PROFILE INFO" color="#30261d" onPress={pressProfileInfoHandler}/>
+          <View style={styles.viewButtonStyle}>
+            <ScrollView style={styles.viewBackgroundStyle}> 
+              <ButtonWithBackground text="ABOUT" color="#30261d" onPress={pressAboutHandler}/>
+              <Text></Text>
+              <ButtonWithBackground text="GAMES" color="#30261d" onPress={pressRoomsHandler}/>
+              <Text></Text>
+              <ButtonWithBackground text="PRICES" color="#30261d" onPress={pressPricesHandler}/>
+              <Text></Text>
+              <ButtonWithBackground text="BOOKINGS" color="#30261d" onPress={pressBookingsHandler}/>
+              <Text></Text>
+              <ButtonWithBackground text="EVENTS" color="#30261d" onPress={pressEventsHandler}/>
+              <Text></Text>
+              <ButtonWithBackground text="PARTIES" color="#30261d" onPress={pressPartiesHandler}/>
+              <Text></Text>
+              <ButtonWithBackground text="CORPORATE" color="#30261d" onPress={pressCorporateHandler}/>
+              <Text></Text>
+              <ButtonWithBackground text="CONTACT" color="#30261d" onPress={pressContactHandler}/> 
+              <Text></Text>
+              <ButtonWithBackground text="PROFILE INFO" color="#30261d" onPress={pressProfileInfoHandler}/>
+            </ScrollView>
           </View> 
         </View>  
     </View> 
@@ -93,5 +95,10 @@ const styles = StyleSheet.create({
     flex: 1,
     top: "5%",
     alignItems: 'center'
+  },
+  viewBackgroundStyle:
+  {
+    position: "absolute",
+    alignContent: "center"
   }
 });
