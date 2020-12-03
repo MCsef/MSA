@@ -1,11 +1,26 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, ImageBackground, Button} from 'react-native';
+import { StyleSheet, Text, View, Image, ImageBackground, ScrollView } from 'react-native';
 import ButtonWithBackground from './ButtonWithBackground';
 
 export default function MainScreen({navigation}) {
 
+  const pressAboutHandler=()=>{
+    navigation.navigate('AboutScreen')
+  }
+
   const pressRoomsHandler=()=>{
     navigation.navigate('RoomsScreen')
+  }
+
+  const pressPricesHandler=()=>{
+    navigation.navigate('PricesScreen')
+  }
+
+  const pressBookingsHandler=()=>{
+    navigation.navigate('BookingsScreen')
+  }
+  const pressCorporateHandler=()=>{
+    navigation.navigate('CorporateScreen')
   }
 
   const pressContactHandler=()=>{
@@ -22,9 +37,17 @@ export default function MainScreen({navigation}) {
         <View style={styles.logoStyle}>
           <Image source={require('../assets/logo.png')}/>
           <View style={styles.viewButtonStyle}> 
-            <ButtonWithBackground text="SEE ROOMS" color="#30261d" onPress={pressRoomsHandler}/>
+            <ButtonWithBackground text="ABOUT" color="#30261d" onPress={pressAboutHandler}/>
             <Text></Text>
-            <ButtonWithBackground text="CONTACT US" color="#30261d" onPress={pressContactHandler}/> 
+            <ButtonWithBackground text="GAMES" color="#30261d" onPress={pressRoomsHandler}/>
+            <Text></Text>
+            <ButtonWithBackground text="PRICES" color="#30261d" onPress={pressPricesHandler}/>
+            <Text></Text>
+            <ButtonWithBackground text="BOOKINGS" color="#30261d" onPress={pressBookingsHandler}/>
+            <Text></Text>
+            <ButtonWithBackground text="CORPORATE" color="#30261d" onPress={pressCorporateHandler}/>
+            <Text></Text>
+            <ButtonWithBackground text="CONTACT" color="#30261d" onPress={pressContactHandler}/> 
             <Text></Text>
             <ButtonWithBackground text="GO TO YOUR ACCOUNT" color="#30261d" onPress={pressLoginHandler}/>
           </View> 
@@ -55,7 +78,7 @@ const styles = StyleSheet.create({
   viewButtonStyle:
   {
     flex: 1,
-    top: "50%",
+    top: "5%",
     alignItems: 'center'
   }
 });

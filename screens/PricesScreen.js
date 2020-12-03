@@ -2,11 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, Image, ImageBackground, Dimensions} from 'react-native';
 import ButtonWithBackgrund from './ButtonWithBackground';
 
-export default function RoomsScreen({navigation}) {
-
-  const pressContactScreenHandler=()=>{
-    navigation.navigate('ContactScreen')
-  }
+export default function PricesScreen({navigation}) {
 
   return (
     <View style={[styles.container]}>
@@ -15,7 +11,7 @@ export default function RoomsScreen({navigation}) {
           <Image source={require('../assets/logo.png')}/>
           <View style={styles.viewButtonStyle}> 
             <View style={styles.viewBackgroundStyle}>
-              <ButtonWithBackgrund text="CONTACT" color="#30261d" onPress={pressContactScreenHandler}/>
+              
             </View>
           </View> 
         </View>  
