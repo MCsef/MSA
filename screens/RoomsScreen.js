@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, ImageBackground, Dimensions} from 'react-native';
+import { StyleSheet, Text, View, Image, ImageBackground, Dimensions, ScrollView} from 'react-native';
 import ButtonWithBackgrund from './ButtonWithBackground';
 
 export default function RoomsScreen({navigation}) {
@@ -14,9 +14,13 @@ export default function RoomsScreen({navigation}) {
         <View style={styles.logoStyle}>
           <Image source={require('../assets/logo.png')}/>
           <View style={styles.viewButtonStyle}> 
-            <View style={styles.viewBackgroundStyle}>
-              <ButtonWithBackgrund text="CONTACT" color="#30261d" onPress={pressContactScreenHandler}/>
-            </View>
+            <ScrollView style={styles.viewBackgroundStyle}>
+              <View style={styles.viewStyle}>
+                <Text></Text>
+                <ButtonWithBackgrund text="CONTACT" color="#30261d" onPress={pressContactScreenHandler}/>
+                <Text></Text>
+              </View>
+            </ScrollView>
           </View> 
         </View>  
     </View> 
@@ -51,12 +55,15 @@ const styles = StyleSheet.create({
   viewBackgroundStyle:
   {
     backgroundColor: "black", 
-    justifyContent: "center", 
-    alignItems: "center", 
     borderRadius: 24,
     width: Dimensions.get('window').width-50, 
     height: Dimensions.get('window').height-300,
     position: "absolute",
     alignContent: "center"
+  },
+  viewStyle:
+  {
+    justifyContent: "center", 
+    alignItems: "center",
   }
 });

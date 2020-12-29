@@ -49,7 +49,7 @@ export default function UserProfileScreen({navigation}) {
             <ScrollView style={styles.viewBackgroundStyle}> 
               <ButtonWithBackground text="ABOUT" color="#30261d" onPress={pressAboutHandler}/>
               <Text></Text>
-              <ButtonWithBackground text="GAMES" color="#30261d" onPress={pressRoomsHandler}/>
+              <ButtonWithBackground text="SEE ROOMS" color="#30261d" onPress={pressRoomsHandler}/>
               <Text></Text>
               <ButtonWithBackground text="PRICES" color="#30261d" onPress={pressPricesHandler}/>
               <Text></Text>
