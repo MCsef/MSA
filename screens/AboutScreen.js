@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, ImageBackground, Dimensions, ScrollView} from 'react-native';
-import ButtonWithBackgrund from './ButtonWithBackground';
+import ButtonWithBackground from './ButtonWithBackground';
 
 export default function AboutScreen({navigation}) {
 
@@ -24,7 +24,7 @@ export default function AboutScreen({navigation}) {
                 <Text style={styles.textStyle}>{"\n"}What do we require? Logic, attention to detail and most of all a desire to have amazing, incredible fun! Plus some of your friends to share this amazing experience with you.</Text>
                 <Text style={styles.textStyle}>{"\n"}*Minimum 2, maximum 6 people.{"\n"}</Text>
                 <View style={styles.viewStyle}>
-                  <ButtonWithBackgrund text="SEE ROOMS" color="#30261d" onPress={pressRoomsHandler}/>
+                  <ButtonWithBackground text="SEE ROOMS" color="#30261d" onPress={pressRoomsHandler}/>
                 </View>
                 <Text></Text>
                 <Text style={styles.textStyle}>{"\n"}{"\n"}CHALLENGE ROOMS</Text>
@@ -33,7 +33,7 @@ export default function AboutScreen({navigation}) {
                 <Text style={styles.textStyle}>{"\n"}Test your ambition and determination! Choose to be fair-play or surprise your opponents with clever sabotage techniques. Come try the most electrifying and irresistible game in Romania!</Text>
                 <Text style={styles.textStyle}>{"\n"}*Minimum 4, maximum 14 people.{"\n"}</Text>
                 <View style={styles.viewStyle}> 
-                  <ButtonWithBackgrund text="SEE ROOMS" color="#30261d" onPress={pressRoomsHandler}/>
+                  <ButtonWithBackground text="SEE ROOMS" color="#30261d" onPress={pressRoomsHandler}/>
                 </View>
                 <Text></Text>
               </ScrollView>
