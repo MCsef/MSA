@@ -9,6 +9,9 @@ const RoomSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    picture: {
+        type: String
+    },
     time: {
         type: Number,
         required: true

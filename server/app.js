@@ -7,7 +7,7 @@ require('./Room')
 app.use(bodyParser.json())
 
 password="WqAonSUj7T1dg2Ji";
-const mongoURL = "mongodb+srv://admin:WqAonSUj7T1dg2Ji@thecodexcluster.dod7b.mongodb.net/<dbname>?retryWrites=true&w=majority";
+const mongoURL = "mongodb+srv://admin:WqAonSUj7T1dg2Ji@thecodexcluster.dod7b.mongodb.net/TheCodex?retryWrites=true&w=majority";
 const Room = mongoose.model("room")
 
 mongoose.connect(mongoURL, {
