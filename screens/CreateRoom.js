@@ -1,6 +1,8 @@
 import React from 'react';
+import {useState} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {TextInput} from 'react-native-paper';
+import ButtonWithBackground from './ButtonWithBackground';
 
 const CreateRoom = () =>{
     const [title, setTitle] = useState("")

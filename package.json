@@ -30,6 +30,7 @@
     "react-native": "https://github.com/expo/react-native/archive/sdk-39.0.3.tar.gz",
     "react-native-gesture-handler": "^1.7.0",
     "react-native-maps": "0.27.1",
+    "react-native-paper": "^4.5.0",
     "react-native-reanimated": "^1.13.1",
     "react-native-safe-area-context": "3.1.4",
     "react-native-screens": "~2.10.1",
@@ -41,7 +42,7 @@
     "@babel/core": "~7.9.0"
   },
   "private": true,
-  "name":"thecodex",
+  "name": "thecodex",
   "description": "Codex is an Android/IOS application, built to make escape room adventure more accessible and attractive.",
   "version": "1.0.0",
   "repository": {
