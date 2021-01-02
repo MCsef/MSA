@@ -1,68 +1,82 @@
-const express = require('express');
-const bodyParser = require("body-parser");
-const app = express();
-app.use(bodyParser.json());
-const path = require('path');
+const express = require('express')
+const app = express()
+const bodyParser = require('body-parser')
+const mongoose = require('mongoose');
+require('./Room')
 
-const db = require('./db');
-const collection = "rooms";
+app.use(bodyParser.json())
 
-app.get('/',(req, res)=>{
-    res.sendFile(path.join(__dirname, 'index.html'));
-});
+password="WqAonSUj7T1dg2Ji";
+const mongoURL = "mongodb+srv://admin:WqAonSUj7T1dg2Ji@thecodexcluster.dod7b.mongodb.net/<dbname>?retryWrites=true&w=majority";
+const Room = mongoose.model("room")
 
-app.get('/getRooms',(req, res)=>{
-    db.getDB().collection(collection).find({}).toArray((err, documents)=>{
-        if(err)
-            console.log(err);
-        else{
-            console.log(documents);
-            res.json(documents);
-        }
-    });
-});
+mongoose.connect(mongoURL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+})
+mongoose.connection.on("connected", ()=>{
+    console.log("connected on mongo!")
+})
 
-app.put('/:id',(req,res)=>{
-    const roomID = req.params.id;
-    const userInput = req.body;
+mongoose.connection.on("err", (err)=>{
+    console.log("error",err)
+})
 
-    db.getDB().collection(collection).findOneAndUpdate({_id: db.getPrimaryKey(roomID)},{$set: {room: userInput.room}},{returnOriginal : false},(err, result)=>{
-        if(err)
-            console.log(err);
-        else
-            res.json(result);
-    });
-});
-
-app.post('/',(req, res)=>{
-    const userInput = req.body;
-    db.getDB().collection(collection).insertOne(userInput,(err,result)=>{
-        if(err)
-            console.log(err);
-        else
-            res.json({result: result, document : result.ops[0]});
-    });
-});
-
-app.delete('/:id',(req,res)=>{
-    const roomID = req.params.id;
-
-    db.getDB().collection(collection).findOneAndDelete({_id:db.getPrimaryKey(roomID)},(err,result)=>{
-        if(err)
-            console.log(err);
-        else
-            res.json(result);
+app.get('/', (req,res)=>{
+    Room.find({}).then(data=>{
+        res.send(data)
+    }).catch(err=>{
+        console.log(err)
     })
 })
 
-db.connect((err)=>{
-    if(err){
-        console.log('unable to connect to database');
-        process.exit(1);
-    }
-    else{
-        app.listen(3000,()=>{
-            console.log('connected to database, app listening to port 3000');
-        })
-    }
+app.post('/send',(req, res)=>{
+    const room = new Room({
+        title: req.body.title,
+        description: req.body.description,
+        time: req.body.time,
+        roomPrice: req.body.roomPrice,
+        clientPrice: req.body.clientPrice,
+        language: req.body.language,
+        team: req.body.team,
+        observation: req.body.observation
+    })
+    room.save().then(data=>{
+        console.log(data)
+        res.send(data)
+    }).catch(err => {
+        console.log(err)
+    })
+})
+
+
+app.post('/delete',(req,res)=>{
+    Room.findByIdAndRemove(req.body.id).then(data=>{
+        console.log(data)
+        res.send(data);
+    }).catch(err=>{
+        console.log(err)
+    })
+})
+
+app.post('/update',(req,res)=>{
+    Room.findByIdAndUpdate(req.body.id,{
+        title: req.body.title,
+        description: req.body.description,
+        time: req.body.time,
+        roomPrice: req.body.roomPrice,
+        clientPrice: req.body.clientPrice,
+        language: req.body.language,
+        team: req.body.team,
+        observation: req.body.observation
+    }).then(data=>{
+        console.log(data)
+        res.send(data)
+    }).catch(err=>{
+        console.log(err)
+    })
+})
+
+app.listen(3000, ()=>{
+    console.log("server running")
 })
