@@ -28,6 +28,8 @@ export default class RoomsScreen extends Component {
               <ScrollView style={styles.viewBackgroundStyle}>
                 <View style={styles.viewStyle}>
                   <Text></Text>
+                  
+                  <Text></Text>
                   <Calendar
                     onDayPress={this.onDayPress}
                     style={styles.calendar}
