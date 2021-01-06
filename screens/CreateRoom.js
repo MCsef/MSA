@@ -17,6 +17,28 @@ const CreateRoom = () =>{
     const [observation, setObservation] = useState("")
     const [modal, setModal] = useState(false)
 
+    const submitData = () => {
+        fetch("http://192.168.0.114:3000/send",{
+            method:"post",
+            headers:{
+                'Content-Type':'application/json'
+            },
+            body: JSON.stringify({
+                title, 
+                description, 
+                time,
+                picture,
+                roomPrice,
+                clientPrice,
+                language,
+                team,
+                observation
+            })
+        }).then(res=>res.json()).then(data=>{
+            console.log(data)
+        })
+    }
+
     const picFromGallery = async () =>{
         const {granted} = await Permissions.askAsync(Permissions.CAMERA_ROLL)
         if(granted){
@@ -140,7 +162,7 @@ const CreateRoom = () =>{
             <Button icon={picture==""?"upload":"check"} mode="contained" theme={theme} onPress={()=>setModal(true)}>
                 Upload Image
             </Button>
-            <Button icon="content-save" mode="contained" theme={theme} onPress={()=>console.log("saved")}>
+            <Button icon="content-save" mode="contained" theme={theme} onPress={()=>submitData()}>
                 Save
             </Button>
             <Modal

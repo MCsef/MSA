@@ -37,6 +37,7 @@ app.post('/send',(req, res)=>{
         time: req.body.time,
         roomPrice: req.body.roomPrice,
         clientPrice: req.body.clientPrice,
+        picture: req.body.picture,
         language: req.body.language,
         team: req.body.team,
         observation: req.body.observation
@@ -66,6 +67,7 @@ app.post('/update',(req,res)=>{
         time: req.body.time,
         roomPrice: req.body.roomPrice,
         clientPrice: req.body.clientPrice,
+        picture: req.body.picture,
         language: req.body.language,
         team: req.body.team,
         observation: req.body.observation
