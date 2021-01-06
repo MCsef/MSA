@@ -14,6 +14,7 @@ import PricesScreen from "../screens/PricesScreen";
 import CorporateScreen from "../screens/CorporateScreen";
 import EventsScreen from "../screens/EventsScreen";
 import PartiesScreen from "../screens/PartiesScreen";
+import CreateRoom from "../screens/CreateRoom";
 
 const screens = {
   MainScreen: { screen: MainScreen },
@@ -28,7 +29,8 @@ const screens = {
   PricesScreen: { screen: PricesScreen },
   CorporateScreen: { screen: CorporateScreen },
   EventsScreen: { screen: EventsScreen },
-  PartiesScreen: { screen: PartiesScreen }
+  PartiesScreen: { screen: PartiesScreen },
+  CreateRoom: { screen: CreateRoom }
 }
 
 const MainScreenStack=createStackNavigator(screens);
