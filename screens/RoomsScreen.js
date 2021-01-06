@@ -28,8 +28,6 @@ export default class RoomsScreen extends Component {
               <ScrollView style={styles.viewBackgroundStyle}>
                 <View style={styles.viewStyle}>
                   <Text></Text>
-                  
-                  <Text></Text>
                   <Calendar
                     onDayPress={this.onDayPress}
                     style={styles.calendar}
@@ -73,7 +71,7 @@ const styles = StyleSheet.create({
   viewButtonStyle:
   {
     flex: 1,
-    top: "5%",
+    top: "50%",
     alignItems: 'center'
   },
   viewBackgroundStyle:

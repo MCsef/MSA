@@ -36,6 +36,10 @@ export default function MainScreen({navigation}) {
     navigation.navigate('LoginScreen')
   }
 
+  const pressCreateRoomHandler=()=>{
+    navigation.navigate('CreateRoom')
+  }
+
   return (
     <View style={[styles.container]}>
       <ImageBackground source={require('../assets/main2.jpg')} style={styles.imageStyle}/>
@@ -60,6 +64,8 @@ export default function MainScreen({navigation}) {
                 <ButtonWithBackground text="CONTACT" color="#30261d" onPress={pressContactHandler}/> 
                 <Text></Text>
                 <ButtonWithBackground text="GO TO YOUR ACCOUNT" color="#30261d" onPress={pressLoginHandler}/>
+                <Text></Text>
+                <ButtonWithBackground text="CREATE ROOM" color="#30261d" onPress={pressCreateRoomHandler}/>
                 <Text></Text>
                 </View>
             </ScrollView>

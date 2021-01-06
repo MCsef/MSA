@@ -1,6 +1,6 @@
 import React from 'react';
 import {useState} from 'react';
-import {StyleSheet, Text, View, Modal, Alert} from 'react-native';
+import {StyleSheet, Text, View, Modal, Alert, Dimensions, ScrollView, ImageBackground, Image} from 'react-native';
 import {TextInput, Button} from 'react-native-paper';
 import * as ImagePicker from 'expo-image-picker';
 import * as Permissions from 'expo-permissions';
@@ -77,7 +77,7 @@ const CreateRoom = () =>{
     }
 
     return(
-        <View style = {styles.root}>
+        /*<ScrollView style = {styles.root}>
             <TextInput 
                 label='Title' 
                 theme={theme}   
@@ -165,8 +165,50 @@ const CreateRoom = () =>{
                     </Button>
                 </View>
             </Modal>
-        </View>
-    )
+        </ScrollView>*/
+        <View style={[styles.container]}>
+        <ImageBackground source={require('../assets/main2.jpg')} style={styles.imageStyle}/>
+          <View style={styles.logoStyle}>
+            <Image source={require('../assets/logo.png')}/>
+            <View style={styles.viewButtonStyle}> 
+              <ScrollView style={styles.viewBackgroundStyle}>
+                <View>
+                    <TextInput label='Title' theme={theme} style={styles.inputStyle} value={title} mode="outlined" onChangeText = {text => setTitle(text)}/>
+                    <TextInput label='Description' theme={theme} style={styles.inputStyle} value={description} mode="outlined" onChangeText = {text => setDescription(text)}/>
+                    <TextInput label='Time' theme={theme} style={styles.inputStyle} value={time} keyboardType = "number-pad" mode="outlined" onChangeText = {text => setTime(text)}/>
+                    <TextInput label='Room Price' theme={theme} style={styles.inputStyle} value={roomPrice} keyboardType = "number-pad" mode="outlined" onChangeText = {text => setRoomPrice(text)}/>
+                    <TextInput label='Client Price' theme={theme} style={styles.inputStyle} value={clientPrice} keyboardType = "number-pad" mode="outlined" onChangeText = {text => setClientPrice(text)}/>
+                    <TextInput label='Team' theme={theme} style={styles.inputStyle} value={team} mode="outlined" onChangeText = {text => setTeam(text)}/>
+                    <TextInput label='Language' theme={theme} style={styles.inputStyle} value={language} mode="outlined" onChangeText = {text => setLanguage(text)}/>
+                    <TextInput label='Observation' theme={theme} style={styles.inputStyle} value={observation} mode="outlined" onChangeText = {text => setObservation(text)}/>
+                    <Text></Text>
+                    <View style={styles.viewStyle}>
+                        <View style={styles.buttonStyle}>
+                            <Button icon={picture==""?"upload":"check"} mode="contained" theme={theme} onPress={()=>setModal(true)}>Upload Image</Button>
+                        </View>
+                    </View>
+                    <Text></Text>
+                    <View style={styles.viewStyle}>
+                        <View style={styles.buttonStyle}>
+                            <Button icon="content-save" mode="contained" theme={theme} onPress={()=>console.log("saved")}>Save</Button>
+                        </View>
+                    </View>
+                    <Text></Text>
+                    <Modal animationType="slide" transparent={true} visible = {modal} onRequestClose={()=>{ setModal(false)}}>
+                        <View style={styles.modalView}>
+                            <View style={styles.modalButtonView}>
+                                <Button style={styles.buttonStyle} icon="camera" mode="contained" theme={theme} onPress={()=>picFromCamera()}>Camera</Button>
+                                <Button icon="image" mode="contained" theme={theme} onPress={()=>picFromGallery()}>Gallery</Button>
+                            </View>
+                            <Button theme={theme} onPress={()=>setModal(false)}>Cancel</Button>
+                        </View>
+                    </Modal>
+                </View>
+              </ScrollView>
+            </View> 
+          </View>  
+      </View> 
+    );
 }
 
 const theme = {
@@ -175,9 +217,6 @@ const theme = {
     }
 }
 const styles = StyleSheet.create({
-    root:{
-        flex:1
-    },
     inputStyle:{
         margin:5
     },
@@ -191,7 +230,62 @@ const styles = StyleSheet.create({
         position: "absolute",
         bottom: 2,
         width: "100%"
-    }
+    },
+    container: 
+    {
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center"
+    },
+    imageStyle: 
+    {
+        flex: 1,
+        width: "100%",
+        height: "100%"
+    },
+    logoStyle:
+    {
+        position: "absolute",
+        justifyContent: "center",
+        top: "8%"
+    },
+    viewButtonStyle:
+    {
+        flex: 1,
+        top: "50%",
+        alignItems: 'center'
+    },
+    textStyle:
+    {
+        color: "#c3c1c1",
+        textAlign: "center",
+        paddingLeft: 25,
+        paddingRight: 25
+    },
+    viewBackgroundStyle:
+    {
+        backgroundColor: "black",  
+        borderRadius: 24,
+        width: Dimensions.get('window').width-50, 
+        height: Dimensions.get('window').height-250,
+        position: "absolute",
+        alignContent: "center"
+    },
+    buttonStyle:
+    {
+        padding: 16,
+        width: 200,
+        borderRadius: 24,
+        alignItems: "center",
+        borderWidth: 2,
+        borderColor: "white",
+        backgroundColor: "#30261d"
+    },
+    viewStyle:
+  {
+    justifyContent: "center", 
+    alignItems: "center",
+  }
 })
 
 export default CreateRoom;
