@@ -48,8 +48,6 @@ import AnimButton from 'react-native-micro-animated-button';
         <StatusBar barStyle="light-content"/>
         <View style={StyleSheet.toolbar}>
           <TouchableOpacity onPress={() => this._onPressBack() }><Text style={StyleSheet.toolbarButton}>Back</Text></TouchableOpacity>
-                      <Text style={StyleSheet.toolbarTitle}></Text>
-                      <Text style={StyleSheet.toolbarButton}></Text>
         </View>
         { slotsarr }
         </View>
