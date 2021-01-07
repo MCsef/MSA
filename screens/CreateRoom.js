@@ -18,7 +18,7 @@ const CreateRoom = () =>{
     const [modal, setModal] = useState(false)
 
     const submitData = () => {
-        fetch("http://192.168.0.114:3000/send",{
+        fetch("http://192.168.0.153:3000/send",{
             method:"post",
             headers:{
                 'Content-Type':'application/json'

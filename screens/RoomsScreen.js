@@ -8,16 +8,14 @@ export default class RoomsScreen extends Component {
     this.state = {};
     this.onDayPress = this.onDayPress.bind(this);
   }
+
   onDayPress(day) {
     this.setState({
       selected: day.dateString
     });
-    this.props.navigation.navigate('Slot', { bookingDate : day })
+    this.props.navigation.navigate('CreateBooking', { bookingDate : day })
   }
-  _onPressBack(){
-    const {goBack} = this.props.navigation
-      goBack()
-  }
+  
   render() {
     return (
       <View style={[styles.container]}>
@@ -32,7 +30,6 @@ export default class RoomsScreen extends Component {
                     onDayPress={this.onDayPress}
                     style={styles.calendar}
                     hideExtraDays
-                    markedDates={{[this.state.selected]: {selected: true}}}
                     theme={{
                       selectedDayBackgroundColor: '#734d26',
                       todayTextColor: '#734d26',

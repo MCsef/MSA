@@ -40,7 +40,7 @@ import { StyleSheet, Text, View, TouchableOpacity, StatusBar, Dimensions, Button
       const slots = jsonData.slots
       const slotsarr = Object.keys(slots).map( function(k) {
         return (  <View key={k} style={{margin:5}}>
-                    <Button countCheck={0} onColor={"green"} effect={"pulse"} _onPress={(status) => _this._bookSlot(status,k,slots[k]) } text={slots[k]} />
+                    <Button countCheck={0} onColor={"green"} effect={"pulse"} _onPress={(status) => _this._bookSlot(status,k,slots[k]) } text={slots[k]}/>
                   </View>)
       });
       return (
