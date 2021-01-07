@@ -17,13 +17,8 @@ export default class RoomsScreen extends Component {
     this.setState({
       selected: day.dateString
     });
-    this.props.navigation.navigate('Slot', { bookingDate : day })
+    this.props.navigation.navigate('CreateBooking', { bookingDate : day })
   }
-  _onPressBack(){
-    const {goBack} = this.props.navigation
-      goBack()
-  }
-
   render() {
     const info = [
       {_id:"1", title:"Title 1", description:"Description 1", price: 50, numberOfPeople:"2-5/6", language:"English", time: 60, picture:'https://images.unsplash.com/photo-1488279944573-528fd3d03b72?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=889&q=80'},

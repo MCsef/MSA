@@ -15,6 +15,8 @@ import CorporateScreen from "../screens/CorporateScreen";
 import EventsScreen from "../screens/EventsScreen";
 import PartiesScreen from "../screens/PartiesScreen";
 import CreateRoom from "../screens/CreateRoom";
+import CreateBooking from "../screens/CreateBooking";
+import Slot from "../screens/Slot";
 
 const screens = {
   MainScreen: { screen: MainScreen },
@@ -30,7 +32,9 @@ const screens = {
   CorporateScreen: { screen: CorporateScreen },
   EventsScreen: { screen: EventsScreen },
   PartiesScreen: { screen: PartiesScreen },
-  CreateRoom: { screen: CreateRoom }
+  CreateRoom: { screen: CreateRoom },
+  CreateBooking: { screen: CreateBooking },
+  Slot: { screen: Slot }
 }
 
 const MainScreenStack=createStackNavigator(screens);

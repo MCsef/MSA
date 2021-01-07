@@ -1,5 +1,5 @@
-import { StyleSheet, Text, View, TouchableOpacity, StatusBar, Button } from 'react-native';
-import AnimButton from 'react-native-micro-animated-button';
+import React, { Component } from 'react';
+import { StyleSheet, Text, View, TouchableOpacity, StatusBar, Dimensions, Button } from 'react-native';
 
   const jsonData = { "slots" : {
       "slot1": "9:00am to 9:30am",
@@ -40,7 +40,7 @@ import AnimButton from 'react-native-micro-animated-button';
       const slots = jsonData.slots
       const slotsarr = Object.keys(slots).map( function(k) {
         return (  <View key={k} style={{margin:5}}>
-                    <AnimButton countCheck={0} onColor={"green"} effect={"pulse"} _onPress={(status) => _this._bookSlot(status,k,slots[k]) } text={slots[k]} />
+                    <Button countCheck={0} onColor={"green"} effect={"pulse"} _onPress={(status) => _this._bookSlot(status,k,slots[k]) } text={slots[k]}/>
                   </View>)
       });
       return (
