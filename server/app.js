@@ -55,6 +55,7 @@ app.post('/send',(req, res)=>{
 
 app.post('/send-data',(req, res)=>{
     const booking = new Booking({
+        room: req.body.room,
         date: req.body.date,
         hour: req.body.hour,
         firstName: req.body.firstName,
@@ -112,6 +113,7 @@ app.post('/update',(req,res)=>{
 
 app.post('/update-data',(req,res)=>{
     Booking.findByIdAndUpdate(req.body.id,{
+        room: req.body.room,
         date: req.body.date,
         hour: req.body.hour,
         firstName: req.body.firstName,

@@ -4,6 +4,7 @@ import {TextInput, Button} from 'react-native-paper';
 
 const CreateBooking = (props) =>{
 
+    const [room, setRoom ] = useState(props.navigation.state.params.bookingRoom)
     const [date, setDate] = useState(props.navigation.state.params.bookingDate.dateString)
     const [hour, setHour] = useState("")
     const [firstName, setFirstName] = useState("")
@@ -25,6 +26,7 @@ const CreateBooking = (props) =>{
                 'Content-Type':'application/json'
             },
             body: JSON.stringify({
+                room,
                 date,
                 hour,
                 firstName,
@@ -46,6 +48,7 @@ const CreateBooking = (props) =>{
             <View style={styles.viewButtonStyle}> 
               <ScrollView style={styles.viewBackgroundStyle}>
                 <View>
+                    <TextInput label='Room' theme={theme} style={styles.inputStyle} value={room} mode="outlined" onChangeText = {text => setRoom(text)}/>
                     <TextInput label='Date' theme={theme} style={styles.inputStyle} value={date} mode="outlined" onChangeText = {text => setDate(text)}/>
                     <TextInput label='Hour' theme={theme} style={styles.inputStyle} value={hour} mode="outlined" onChangeText = {text => setHour(text)}/>
                     <TextInput label='First Name' theme={theme} style={styles.inputStyle} value={firstName} mode="outlined" onChangeText = {text => setFirstName(text)}/>

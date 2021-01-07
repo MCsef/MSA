@@ -12,8 +12,6 @@ export default class RoomsScreen extends Component {
     this.onDayPress = this.onDayPress.bind(this);
   }
 
-  
-
   UNSAFE_componentWillMount(){
     this.fetchData();
   }
@@ -24,13 +22,15 @@ export default class RoomsScreen extends Component {
     this.setState({data: json});
   };
 
-  onDayPress(day) {
+  onDayPress(day, title) {
     this.setState({
       selected: day.dateString
     });
-    this.props.navigation.navigate('CreateBooking', { bookingDate : day })
+    this.props.navigation.navigate('CreateBooking', { bookingDate : day, bookingRoom: title })
   }
-  render() {  
+
+  render() {
+ 
   return (
       <View style={[styles.container]}>
         <ImageBackground source={require('../assets/main2.jpg')} style={styles.imageStyle}/>
