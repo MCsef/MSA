@@ -53,7 +53,6 @@ export default class RoomsScreen extends Component {
                   <Text style={styles.roomsText}>***{`${item.team}`}</Text>
                   <Text style={styles.roomsText}>{`${item.observation}`}</Text>
                   <Text></Text>
-                  
                   <Text style={styles.roomsText}>For bookings, please press a date on the aferent calendar! :)</Text>
                   <Text></Text>
                   <Calendar
