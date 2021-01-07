@@ -2,7 +2,6 @@ import React, { Component, useEffect, useState} from 'react';
 import { FlatList, StyleSheet, Text, View, Dimensions, ImageBackground, Image, ActivityIndicator, Button} from 'react-native';
 import {Calendar} from 'react-native-calendars';
 
-
 export default class RoomsScreen extends Component {
   constructor(props) {
     super(props);
