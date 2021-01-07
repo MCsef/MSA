@@ -1,6 +1,6 @@
 import React from 'react';
 import {useState} from 'react';
-import {StyleSheet, Text, View, Modal, Alert, Dimensions, ScrollView, ImageBackground, Image} from 'react-native';
+import {StyleSheet, Text, View, Modal, Alert, Dimensions, ScrollView, ImageBackground, Image, KeyboardAvoidingView} from 'react-native';
 import {TextInput, Button} from 'react-native-paper';
 import * as ImagePicker from 'expo-image-picker';
 import * as Permissions from 'expo-permissions';
@@ -35,7 +35,7 @@ const CreateRoom = () =>{
                 observation
             })
         }).then(res=>res.json()).then(data=>{
-            console.log(data)
+            Alert.alert(`${data.title} successfully saved`)
         })
     }
 
@@ -99,6 +99,7 @@ const CreateRoom = () =>{
     }
 
     return(
+        <KeyboardAvoidingView>
         <View style={[styles.container]}>
         <ImageBackground source={require('../assets/main2.jpg')} style={styles.imageStyle}/>
           <View style={styles.logoStyle}>
@@ -141,6 +142,7 @@ const CreateRoom = () =>{
             </View> 
           </View>  
       </View> 
+      </KeyboardAvoidingView>
     );
 }
 

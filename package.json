@@ -24,6 +24,7 @@
     "nodemon": "^2.0.6",
     "path": "^0.12.7",
     "react": "16.13.1",
+    "react-bootstrap-native-table": "0.0.11",
     "react-dom": "16.13.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-39.0.3.tar.gz",
     "react-native-calendars": "^1.1129.0",
